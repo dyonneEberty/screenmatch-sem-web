@@ -4,14 +4,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 public class Episodio {
-    private Integer tempora;
+    private Integer temporada;
     private String titulo;
     private Integer numeroEpisodio;
     private Double avaliacao;
     private LocalDate dataLancamento;
 
     public Episodio(Integer numeroTemporada, DadosEpisodio dadosEpisodio) {
-        this.tempora = numeroTemporada;
+        this.temporada = numeroTemporada;
         this.titulo = dadosEpisodio.titulo();
         this.numeroEpisodio = dadosEpisodio.numero();
 
@@ -20,6 +20,7 @@ public class Episodio {
         } catch (NumberFormatException ex) {
             this.avaliacao = 0.0;
         }
+
         try {
             this.dataLancamento = LocalDate.parse(dadosEpisodio.dataLancamento());
         } catch (DateTimeParseException ex) {
@@ -27,12 +28,12 @@ public class Episodio {
         }
     }
 
-    public Integer getTempora() {
-        return tempora;
+    public Integer getTemporada() {
+        return temporada;
     }
 
-    public void setTempora(Integer tempora) {
-        this.tempora = tempora;
+    public void setTemporada(Integer temporada) {
+        this.temporada = temporada;
     }
 
     public String getTitulo() {
@@ -69,10 +70,10 @@ public class Episodio {
 
     @Override
     public String toString() {
-        return "tempora=" + tempora +
+        return "temporada=" + temporada +
                 ", titulo='" + titulo + '\'' +
                 ", numeroEpisodio=" + numeroEpisodio +
                 ", avaliacao=" + avaliacao +
-                ", dataLancamento=" + dataLancamento;
+                ", dataLancamento=" + dataLancamento ;
     }
 }
