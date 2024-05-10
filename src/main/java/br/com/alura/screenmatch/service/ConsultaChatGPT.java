@@ -6,7 +6,7 @@ import com.theokanning.openai.service.OpenAiService;
 // Faz a integração da aplicação com chatGPT via consumo de API:
 public class ConsultaChatGPT {
     public static String obterTraducao(String texto) {
-        OpenAiService service = new OpenAiService("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");
+        OpenAiService service = new OpenAiService("keyHere");
 
         CompletionRequest requisicao = CompletionRequest.builder()
                 .model("gpt-3.5-turbo-instruct")
