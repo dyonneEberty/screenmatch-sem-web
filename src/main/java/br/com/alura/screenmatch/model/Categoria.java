@@ -7,7 +7,8 @@ public enum Categoria {
     ROMANCE("Romance"),
     COMEDIA("Comedy"),
     DRAMA("Drama"),
-    CRIME("Crime");
+    CRIME("Crime"),
+    ANIMACAO("Animation");
 
     // Adiciona uma correpondência ao enum
     private String categoriaOmdb;
@@ -17,7 +18,7 @@ public enum Categoria {
         this.categoriaOmdb = categoriaOmdb;
     }
 
-    // Método statico auxiliar c/ Match dinâmico
+    // Método statico auxiliar c/ Match dinâmica
     public static Categoria fromString(String text) {
         for (Categoria categoria : Categoria.values()) {
             if (categoria.categoriaOmdb.equalsIgnoreCase(text)) {
