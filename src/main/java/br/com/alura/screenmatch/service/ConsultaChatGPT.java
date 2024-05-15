@@ -6,10 +6,10 @@ import com.theokanning.openai.service.OpenAiService;
 // Faz a integração da aplicação com chatGPT via consumo de API:
 public class ConsultaChatGPT {
     public static String obterTraducao(String texto) {
-        OpenAiService service = new OpenAiService("keyHere");
+        OpenAiService service = new OpenAiService(System.getenv("OPENAI_APIKEY"));
 
         CompletionRequest requisicao = CompletionRequest.builder()
-                .model("gpt-3.5-turbo-instruct")
+                .model("gpt-3.5-turbo-16k-0613")
                 .prompt("traduza para o português o texto: " + texto)
                 .maxTokens(1000)
                 .temperature(0.7)
